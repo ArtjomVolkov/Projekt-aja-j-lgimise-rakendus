@@ -26,5 +26,18 @@
         <status>подтверждена</status>
         <custom_function>Добавить описание собственной функции</custom_function>
     </task>
+    <task>
+        <report_id>3</report_id>
+        <user>
+            <user_id>3</user_id>
+            <role>Главный дикректор проекта</role>
+            <first_name>Иван</first_name>
+            <last_name>Иванов</last_name>
+            <profession>Менеджер</profession>
+        </user>
+        <entry_time>2023-03-01T10:32:00</entry_time>
+        <status>подтверждена</status>
+        <custom_function>Добавить описание собственной функции</custom_function>
+    </task>
     <!-- Добавьте другие задачи и пользователей по аналогии -->
 </project>
