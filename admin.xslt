@@ -10,13 +10,14 @@
             </head>
             <body>
                 <h1>Список задач в проекте (Администратор)</h1>
-                <form action="index.php" class="back">
+                <form action="projekt.php" class="back">
                     <input type="submit" value="Вернуться"/>
                 </form>
                 <label for="show-confirmed">Показать только не подтвержденные задачи:</label>
                 <input type="checkbox" id="show-confirmed" onclick="filterTasks2()"/>
                 <table border="1">
                     <tr>
+                        <th>Проект</th>
                         <th>Отчет</th>
                         <th>Имя</th>
                         <th>Фамилия</th>
@@ -26,8 +27,9 @@
                         <th>Профессия</th>
                         <th>Действия</th>
                     </tr>
-                    <xsl:for-each select="/project/task">
+                    <xsl:for-each select="/projects/project/task">
                         <tr>
+                            <td><xsl:value-of select="ancestor::project/project_name"/></td>
                             <td><xsl:value-of select="report_id"/></td>
                             <td><xsl:value-of select="user/first_name"/></td>
                             <td><xsl:value-of select="user/last_name"/></td>

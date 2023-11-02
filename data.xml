@@ -1,40 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
-    <task>
-        <report_id>1</report_id>
-        <user>
-            <user_id>1</user_id>
-            <role>Разработчик</role>
-            <first_name>Иван</first_name>
-            <last_name>Иванов</last_name>
-            <profession>Программист</profession>
-        </user>
-        <entry_time>222</entry_time>
-        <status>подтверждена</status>
-    </task>
-    <task>
-        <report_id>2</report_id>
-        <user>
-            <user_id>2</user_id>
-            <role>Менеджер проекта</role>
-            <first_name>Петр</first_name>
-            <last_name>Петров</last_name>
-            <profession>Менеджер</profession>
-        </user>
-        <entry_time>30</entry_time>
-        <status>подтверждена</status>
-    </task>
-    <task>
-        <report_id>3</report_id>
-        <user>
-            <user_id>3</user_id>
-            <role>Главный дикректор проекта</role>
-            <first_name>Иван</first_name>
-            <last_name>Иванов</last_name>
-            <profession>Менеджер</profession>
-        </user>
-        <entry_time>32</entry_time>
-        <status>подтверждена</status>
-    </task>
-    <!-- Добавьте другие задачи и пользователей по аналогии -->
-    </project>
+<projects>
+    <project id="1">
+        <project_name>Проект 1</project_name>
+        <!-- Добавьте другие задачи и пользователей по аналогии -->
+    <task><report_id>1</report_id><user><first_name>asdasdas</first_name><last_name>dasdasd</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>323</entry_time><status>подтверждена</status></task><task><report_id>2</report_id><user><first_name>sadaasdsa</first_name><last_name>dsadasdsad</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>123</entry_time><status>подтверждена</status></task><task><report_id>3</report_id><user><first_name>sadasdas</first_name><last_name>dsadsadasdasd</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>43</entry_time><status>подтверждена</status></task></project>
+    <project id="2">
+        <project_name>Проект 2</project_name>
+        <!-- Добавьте другие задачи и пользователей по аналогии -->
+    <task><report_id>4</report_id><user><first_name>sadsadasda</first_name><last_name>xzczxczsdasd</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>13</entry_time><status>подтверждена</status></task><task><report_id>5</report_id><user><first_name>dasdasdsadz</first_name><last_name>xcasdqwe</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>421</entry_time><status>подтверждена</status></task><task><report_id>6</report_id><user><first_name>xasd</first_name><last_name>sazxcasd</last_name><role>Директор</role><profession>Веб-разработчик</profession></user><entry_time>4523</entry_time><status>подтверждена</status></task></project>
+</projects>

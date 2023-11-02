@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+    <xsl:param name="project_id" />
     <xsl:template match="/">
         <html>
             <head>
@@ -28,7 +28,7 @@
                         <th>Статус</th>
                         <th>Профессия</th>
                     </tr>
-                    <xsl:for-each select="/project/task">
+                    <xsl:for-each select="/projects/project[@id = $project_id]/task">
                         <tr>
                             <td><xsl:value-of select="report_id"/></td>
                             <td><xsl:value-of select="user/first_name"/> , <xsl:value-of select="user/last_name"/></td>
@@ -41,6 +41,7 @@
                 </table>
                 <h1>Подача заявки</h1>
                 <form method="post" action="index.php" class="add" onsubmit="return validateForm()">
+                    <input type="hidden" name="project_id" value="{$project_id}"/>
                     <label for="first_name">Имя:</label>
                     <input type="text" id="first_name" name="first_name" /><br/>
                     <label for="last_name">Фамилия:</label>

@@ -19,7 +19,7 @@ function filterTasks2() {
     var checkbox = document.getElementById("show-confirmed");
     var rows = document.getElementsByTagName("tr");
     for (var i = 1; i < rows.length; i++) {
-        var cell = rows[i].getElementsByTagName("td")[5]; // Индекс 5 - столбец "Статус"
+        var cell = rows[i].getElementsByTagName("td")[6]; // Индекс 5 - столбец "Статус"
         if (cell) {
             var text = cell.textContent || cell.innerText;
             if (checkbox.checked && text !== "ожидает подтверждения") {
