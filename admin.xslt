@@ -18,7 +18,8 @@
                 <table border="1">
                     <tr>
                         <th>Отчет</th>
-                        <th>Исполнитель</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
                         <th>Должность</th>
                         <th>Затраченное время</th>
                         <th>Статус</th>
@@ -28,7 +29,8 @@
                     <xsl:for-each select="/project/task">
                         <tr>
                             <td><xsl:value-of select="report_id"/></td>
-                            <td><xsl:value-of select="user/first_name"/> , <xsl:value-of select="user/last_name"/></td>
+                            <td><xsl:value-of select="user/first_name"/></td>
+                            <td><xsl:value-of select="user/last_name"/></td>
                             <td><xsl:value-of select="user/role"/></td>
                             <td>
                                 <xsl:choose>
