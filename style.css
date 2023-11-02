@@ -1,0 +1,206 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a simple background color and font family */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Style form elements */
+form {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the table */
+table {
+    width: 89%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#show-confirmed {
+    transform: scale(1.5); /* Увеличиваем размер чекбокса (можно настроить) */
+    display: inline-block; /* Размещение чекбокса в строке с текстом */
+    margin-right: 10px; /* Отступ справа от текста */
+}
+
+label[for="show-confirmed"] {
+    display: inline-block; /* Размещение метки и чекбокса в одну строку */
+}
+
+/* Style headers */
+h1 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.admin {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 10%;
+    text-align: left;
+    z-index: 1000;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+/* Опциональные стили для внутренних элементов формы */
+.admin label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.admin input[type="text"],
+.admin input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.admin input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the "Подача заявки" form */
+#first_name, #last_name, #role, #profession {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+/* Стили для формы "add" */
+.add {
+    background-color: #f8f9fa; /* Цвет фона формы */
+    border: 1px solid #dee2e6; /* Граница формы */
+    border-radius: 5px; /* Скругление углов */
+    padding: 20px; /* Внутренний отступ */
+    width: 60%; /* Ширина формы */
+    margin: 0 auto; /* Центрирование формы по горизонтали */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень формы */
+}
+
+.add label {
+    display: block; /* Размещение меток на отдельных строках */
+    margin-bottom: 5px; /* Отступ между метками и полями ввода */
+}
+
+.add input[type="text"] {
+    width: 100%; /* Заполнение всей доступной ширины */
+    padding: 10px; /* Внутренний отступ вокруг текста */
+    margin-bottom: 15px; /* Отступ между полями ввода */
+    border: 1px solid #ccc; /* Граница полей ввода */
+    border-radius: 4px; /* Скругление углов полей ввода */
+}
+
+.add input[type="submit"] {
+    background-color: #007bff; /* Цвет фона кнопки "Подать заявку" */
+    color: #fff; /* Цвет текста на кнопке */
+    padding: 10px 20px; /* Внутренний отступ кнопки */
+    border: none; /* Убираем границу кнопки */
+    border-radius: 4px; /* Скругление углов кнопки */
+    cursor: pointer; /* Задаем курсор "рукопожатие" при наведении на кнопку */
+}
+
+.add input[type="submit"]:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+
+form.back {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 10%;
+    text-align: left;
+    z-index: 1000;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+form.back input[type="submit"] {
+    background-color: #007BFF; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    padding: 10px 20px; /* Внутренний отступ кнопки */
+    border: none; /* Убираем границу кнопки */
+    cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+}
+
+form.back input[type="submit"]:hover {
+    background-color: #0056b3; /* Изменяем цвет фона при наведении на кнопку */
+}
+
+
+input[type="number"] {
+    width: 100px; /* Здесь можно настроить ширину по вашему усмотрению */
+    padding: 5px;
+    font-size: 16px; /* Размер шрифта */
+}

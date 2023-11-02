@@ -9,9 +9,8 @@
             <last_name>Иванов</last_name>
             <profession>Программист</profession>
         </user>
-        <entry_time>2023-11-01T09:00:00</entry_time>
-        <status>ожидает подтверждения</status>
-        <custom_function>Добавить описание собственной функции</custom_function>
+        <entry_time>222</entry_time>
+        <status>подтверждена</status>
     </task>
     <task>
         <report_id>2</report_id>
@@ -22,9 +21,8 @@
             <last_name>Петров</last_name>
             <profession>Менеджер</profession>
         </user>
-        <entry_time>2023-11-01T10:30:00</entry_time>
+        <entry_time>30</entry_time>
         <status>подтверждена</status>
-        <custom_function>Добавить описание собственной функции</custom_function>
     </task>
     <task>
         <report_id>3</report_id>
@@ -35,9 +33,8 @@
             <last_name>Иванов</last_name>
             <profession>Менеджер</profession>
         </user>
-        <entry_time>2023-03-01T10:32:00</entry_time>
+        <entry_time>32</entry_time>
         <status>подтверждена</status>
-        <custom_function>Добавить описание собственной функции</custom_function>
     </task>
     <!-- Добавьте другие задачи и пользователей по аналогии -->
-</project>
+<task><user><first_name>фыв</first_name><last_name>фывф</last_name><role>ыфвфы</role><profession>фывфы</profession></user><report_id>4</report_id><entry_time>3</entry_time><status>подтверждена</status></task><task><report_id>6</report_id><user><first_name>asdsad</first_name><last_name>asdasda</last_name><role>dasdasda</role><profession>asdasdasda</profession></user><entry_time> </entry_time><status>ожидает подтверждения</status></task></project>
