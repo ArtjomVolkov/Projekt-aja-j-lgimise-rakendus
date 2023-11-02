@@ -30,4 +30,3 @@ function filterTasks2() {
         }
     }
 }
-

@@ -37,4 +37,4 @@
         <status>подтверждена</status>
     </task>
     <!-- Добавьте другие задачи и пользователей по аналогии -->
-<task><user><first_name>фыв</first_name><last_name>фывф</last_name><role>ыфвфы</role><profession>фывфы</profession></user><report_id>4</report_id><entry_time>3</entry_time><status>подтверждена</status></task><task><report_id>6</report_id><user><first_name>asdsad</first_name><last_name>asdasda</last_name><role>dasdasda</role><profession>asdasdasda</profession></user><entry_time> </entry_time><status>ожидает подтверждения</status></task></project>
+    <task><report_id>4</report_id><user><first_name>фывфы</first_name><last_name>вфывфыв</last_name><role>фвыфвф</role><profession>вфвфы</profession></user><entry_time> </entry_time><status>ожидает подтверждения</status></task></project>
