@@ -20,13 +20,13 @@
                     </xsl:for-each>
                 </ul>
                 <h2>Добавить новый проект:</h2>
-                <form method="post" action="projekt.php">
+                <form method="post" action="koduleht.php">
                     <label for="new_project_name">Название проекта:</label>
                     <input type="text" id="new_project_name" name="new_project_name"/>
                     <input type="submit" value="Добавить"/>
                 </form>
                 <h2>Удалить проект:</h2>
-                <form method="post" action="projekt.php">
+                <form method="post" action="koduleht.php">
                     <label for="delete_project_id">Выберите проект для удаления:</label>
                     <select id="delete_project_id" name="delete_project_id">
                         <xsl:for-each select="/projects/project">
