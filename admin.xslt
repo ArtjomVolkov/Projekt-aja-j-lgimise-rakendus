@@ -13,6 +13,8 @@
                 <form action="koduleht.php" class="back">
                     <input type="submit" value="Вернуться"/>
                 </form>
+                <label for="projectName">Поиск по имени проекта:</label>
+                <input type="text" id="projectName" oninput="filterByProjectName()" />
                 <label for="show-confirmed">Показать только не подтвержденные задачи:</label>
                 <input type="checkbox" id="show-confirmed" onclick="filterTasks2()"/>
                 <table border="1">
