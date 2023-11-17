@@ -10,7 +10,7 @@
             </head>
             <body>
                 <h1>Список задач в проекте (Администратор)</h1>
-                <form action="projekt.php" class="back">
+                <form action="koduleht.php" class="back">
                     <input type="submit" value="Вернуться"/>
                 </form>
                 <label for="show-confirmed">Показать только не подтвержденные задачи:</label>
