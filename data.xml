@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projects>
-    <project id="1">
-        <project_name>Проект 1</project_name>
-        <!-- Добавьте другие задачи и пользователей по аналогии -->
-    </project>
-    
-<project id="65576b237d2e6"><project_name>Test</project_name></project><project id="655c605a2a91d"><project_name>ssssss</project_name><task><report_id>6</report_id><user><first_name>a</first_name><last_name>a</last_name><role>Testija</role><profession>Python programmeerija</profession></user><entry_time>51</entry_time><status>kinnitatud</status></task><task><report_id>7</report_id><user><first_name>aaa</first_name><last_name>aaa</last_name><role>Juht</role><profession>Veebiarendaja</profession></user><entry_time>6567</entry_time><status>kinnitatud</status></task><task><report_id>8</report_id><user><first_name>sss</first_name><last_name>ssss</last_name><role>Süsteemiadministraator</role><profession>Windowsi süsteemiadministraator</profession></user><entry_time>678678</entry_time><status>kinnitatud</status></task><task><report_id>4</report_id><user><first_name>dsf</first_name><last_name>sdfsdfsd</last_name><role>Juht</role><profession>Veebiarendaja</profession></user><entry_time> </entry_time><status>ootab kinnitust</status></task></project></projects>
+<project id="655c9cbd2e0dc"><project_name>aasadasd</project_name><task><report_id>1</report_id><user><first_name>a</first_name><last_name>a</last_name><role>Juht</role><profession>Veebiarendaja</profession></user><entry_time>11</entry_time><status>kinnitatud</status></task><task><report_id>2</report_id><user><first_name>фывфыв</first_name><last_name>фывф</last_name><role>Juht</role><profession>Veebiarendaja</profession></user><entry_time>123</entry_time><status>kinnitatud</status></task></project></projects>

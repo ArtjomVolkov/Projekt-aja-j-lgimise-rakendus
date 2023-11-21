@@ -94,6 +94,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['first_name'])) {
 
             // Сохранение обновленного XML-файла
             $xml->save('data.xml');
+
+            // Загрузка данных из JSON-файла
+            $jsonData = file_get_contents('data.json');
+            $data = json_decode($jsonData, true);
+
+            // Проверка существования проекта в JSON-данных
+            if (isset($data['projects'][$project_id])) {
+
+                // Добавление новой задачи в массив задач для указанного проекта
+                $newTask = array(
+                    'report_id' => $reportId,
+                    'user' => array(
+                        'first_name' => $_POST['first_name'],
+                        'last_name' => $_POST['last_name'],
+                        'role' => $_POST['role'],
+                        'profession' => $_POST['profession'],
+                    ),
+                    'entry_time' => null,
+                    'status' => null
+                );
+
+                $data['projects'][$project_id]['tasks'][] = $newTask;
+
+                // Сохранение обновленных данных в JSON-файле
+                file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
+            }
+
             header("Location: userleht.php?project_id=$project_id");
         } else {
             echo "Projekti ei leitud.";

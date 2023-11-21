@@ -33,9 +33,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $task->getElementsByTagName('status')->item(0)->nodeValue = 'kinnitatud';
         $task->getElementsByTagName('entry_time')->item(0)->nodeValue = $hours;
     }
-
     // Сохранить обновленный XML-файл
     $xml->save('data.xml');
+
+        // Загрузка данных из JSON-файла
+        $jsonData = file_get_contents('data.json');
+        $data = json_decode($jsonData, true);
+
+        // Проверка существования задачи в JSON-данных
+        foreach ($data['projects'] as &$project) {
+            if (isset($project['tasks'])) {
+                foreach ($project['tasks'] as &$task) {
+                    if ($task['report_id'] == $reportId) {
+                        $task['entry_time'] = $hours;
+                        $task['status'] = 'kinnitatud';
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Сохранение обновленных данных в JSON-файле
+        file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
     header("Location: admin.php");
 }
     elseif (isset($_POST['delete_report_id'])) {
@@ -53,6 +72,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Сохранить обновленный XML-файл
         $xml->save('data.xml');
+        // Загрузка данных из JSON-файла
+        $jsonData = file_get_contents('data.json');
+        $data = json_decode($jsonData, true);
+
+        // Проверка существования задачи в JSON-данных
+        foreach ($data['projects'] as &$project) {
+            if (isset($project['tasks'])) {
+                foreach ($project['tasks'] as $key => $task) {
+                    if ($task['report_id'] == $deleteReportId) {
+                        // Удаление задачи из массива задач для указанного проекта
+                        unset($project['tasks'][$key]);
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Сохранение обновленных данных в JSON-файле
+        file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
         header("Location: admin.php");
     }
     elseif (isset($_POST['edit_hours'])) {
@@ -71,6 +109,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Сохранить обновленный XML-файл
         $xml->save('data.xml');
+
+        // Загрузка данных из JSON-файла
+        $jsonData = file_get_contents('data.json');
+        $data = json_decode($jsonData, true);
+
+        // Проверка существования задачи в JSON-данных
+        foreach ($data['projects'] as &$project) {
+            if (isset($project['tasks'])) {
+                foreach ($project['tasks'] as &$task) {
+                    if ($task['report_id'] == $reportId) {
+                        $task['entry_time'] = $newHours;
+                        $task['status'] = 'kinnitatud';
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Сохранение обновленных данных в JSON-файле
+        file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
         header("Location: admin.php");
     }
 }

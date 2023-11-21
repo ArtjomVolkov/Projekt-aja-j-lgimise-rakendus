@@ -20,6 +20,8 @@
                 <h1>Projekti ülesannete loetelu "<xsl:value-of select="$project_name"/>"</h1>
                 <a href="data.xml">Ссылка на XML-файл</a>
                 <br/>
+                <a href="data.json">Ссылка на JSON-файл</a>
+                <br/>
                 <label for="show-confirmed">Näita ainult kinnitatud ülesandeid:</label>
                 <input type="checkbox" id="show-confirmed" onclick="filterTasks()"/>
                 <button onclick="location.href='koduleht.php'">Tagasi projektide nimekirja juurde</button>
