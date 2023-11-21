@@ -11,7 +11,7 @@
             <body>
                 <h1>Projekti ülesannete nimekiri (administraator)</h1>
                 <form action="koduleht.php" class="back">
-                    <input type="submit" value="Вернуться"/>
+                    <input type="submit" value="Tagasi"/>
                 </form>
                 <label for="projectName">Otsi projekti nime järgi:</label>
                 <input type="text" id="projectName" oninput="filterByProjectName()" />

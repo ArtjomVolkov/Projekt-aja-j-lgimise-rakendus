@@ -1,8 +1,8 @@
 {
     "projects": {
-        "655c9cbd2e0dc": {
-            "id": "655c9cbd2e0dc",
-            "project_name": "aasadasd",
+        "655ca0e89c452": {
+            "id": "655ca0e89c452",
+            "project_name": "a",
             "tasks": [
                 {
                     "report_id": 1,
@@ -14,17 +14,6 @@
                     },
                     "entry_time": null,
                     "status": null
-                },
-                {
-                    "report_id": 2,
-                    "user": {
-                        "first_name": "\u0444\u044b\u0432\u0444\u044b\u0432",
-                        "last_name": "\u0444\u044b\u0432\u0444",
-                        "role": "Juht",
-                        "profession": "Veebiarendaja"
-                    },
-                    "entry_time": "123",
-                    "status": "kinnitatud"
                 }
             ]
         }
