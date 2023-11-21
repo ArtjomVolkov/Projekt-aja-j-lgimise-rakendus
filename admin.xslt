@@ -4,30 +4,30 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Палень Администратора</title>
+                <title>Administraatori</title>
                 <script src="script.js" type="text/javascript"></script>
                 <link rel="stylesheet" type="text/css" href="style.css"/>
             </head>
             <body>
-                <h1>Список задач в проекте (Администратор)</h1>
+                <h1>Projekti ülesannete nimekiri (administraator)</h1>
                 <form action="koduleht.php" class="back">
                     <input type="submit" value="Вернуться"/>
                 </form>
-                <label for="projectName">Поиск по имени проекта:</label>
+                <label for="projectName">Otsi projekti nime järgi:</label>
                 <input type="text" id="projectName" oninput="filterByProjectName()" />
-                <label for="show-confirmed">Показать только не подтвержденные задачи:</label>
+                <label for="show-confirmed">Näita ainult kinnitamata ülesandeid:</label>
                 <input type="checkbox" id="show-confirmed" onclick="filterTasks2()"/>
                 <table border="1">
                     <tr>
-                        <th>Проект</th>
-                        <th>Отчет</th>
-                        <th>Имя</th>
-                        <th>Фамилия</th>
-                        <th>Должность</th>
-                        <th>Затраченное время</th>
-                        <th>Статус</th>
-                        <th>Профессия</th>
-                        <th>Действия</th>
+                        <th>Projekt</th>
+                        <th>Aruanne</th>
+                        <th>Nimi</th>
+                        <th>Perenimi</th>
+                        <th>Positsioon</th>
+                        <th>Kulutatud aeg</th>
+                        <th>Status</th>
+                        <th>Amet</th>
+                        <th>Meetmed</th>
                     </tr>
                     <xsl:for-each select="/projects/project/task">
                         <tr>
@@ -38,11 +38,11 @@
                             <td><xsl:value-of select="user/role"/></td>
                             <td>
                                 <xsl:choose>
-                                    <xsl:when test="status='ожидает подтверждения'">
+                                    <xsl:when test="status='ootab kinnitust'">
                                         <form method="post">
                                             <input type="hidden" name="report_id" value="{report_id}"/>
                                             <input type="number" name="hours" value="{entry_time}"/>
-                                            <input type="submit" name="confirm" value="Подтвердить"/>
+                                            <input type="submit" name="confirm" value="Kinnita"/>
                                         </form>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -55,7 +55,7 @@
                             <td>
                                 <form method="post">
                                     <input type="hidden" name="delete_report_id" value="{report_id}"/>
-                                    <input type="submit" name="delete" value="Удалить"/>
+                                    <input type="submit" name="delete" value="Kustuta"/>
                                 </form>
                             </td>
                         </tr>

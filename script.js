@@ -5,7 +5,7 @@ function filterTasks() {
         var cell = rows[i].getElementsByTagName("td")[4]; // Индекс 4 - столбец "Статус"
         if (cell) {
             var text = cell.textContent || cell.innerText;
-            if (checkbox.checked && text !== "подтверждена") {
+            if (checkbox.checked && text !== "kinnitatud") {
                 rows[i].style.display = "none";
             } else {
                 rows[i].style.display = "";
@@ -22,7 +22,7 @@ function filterTasks2() {
         var cell = rows[i].getElementsByTagName("td")[6]; // Индекс 5 - столбец "Статус"
         if (cell) {
             var text = cell.textContent || cell.innerText;
-            if (checkbox.checked && text !== "ожидает подтверждения") {
+            if (checkbox.checked && text !== "ootab kinnitust") {
                 rows[i].style.display = "none";
             } else {
                 rows[i].style.display = "";
@@ -36,12 +36,12 @@ function validateForm() {
     var lastName = document.getElementById("last_name").value;
 
     if (firstName === "" || lastName === "") {
-        alert("Имя и фамилия не могут быть пустыми.");
+        alert("Ees- ja perekonnanimi ei saa olla tühi.");
         return false;
     }
 
     if (!/^[A-Za-zА-Яа-яЁё\s]*$/.test(firstName) || !/^[A-Za-zА-Яа-яЁё\s]*$/.test(lastName)) {
-        alert("Имя и фамилия не могут содержать цифры или специальные символы.");
+        alert("Ees- ja perekonnanimi ei tohi sisaldada numbreid ega erimärke..");
         return false;
     }
 

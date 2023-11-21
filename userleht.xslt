@@ -5,29 +5,31 @@
         <xsl:variable name="project_name" select="/projects/project[@id = $project_id]/project_name" />
         <html>
             <head>
-                <title>Отслеживание времени в проекте</title>
+                <title>Aja jälgimine projektis</title>
                 <script src="script.js" type="text/javascript"></script>
                 <link rel="stylesheet" type="text/css" href="style.css"/>
             </head>
             <body>
                 <form method="post" action="admin.php" class="admin">
-                    <label for="login">Логин:(Логин - a)</label>
+                    <label for="login">Login:(Login - a)</label>
                     <input type="text" id="login" name="login"/><br/>
-                    <label for="password">Пароль:(Пароль - a)</label>
+                    <label for="password">Password:(Password - a)</label>
                     <input type="password" id="password" name="password" /><br/>
-                    <input type="submit" value="Войти"/>
+                    <input type="submit" value="Logi sisse"/>
                 </form>
-                <h1>Список задач в проекте "<xsl:value-of select="$project_name"/>"</h1>
-                <label for="show-confirmed">Показать только подтвержденные задачи:</label>
+                <h1>Projekti ülesannete loetelu "<xsl:value-of select="$project_name"/>"</h1>
+                <a href="data.xml">Ссылка на XML-файл</a>
+                <br/>
+                <label for="show-confirmed">Näita ainult kinnitatud ülesandeid:</label>
                 <input type="checkbox" id="show-confirmed" onclick="filterTasks()"/>
-                <button onclick="location.href='koduleht.php'">Вернуться к списку проектов</button>
+                <button onclick="location.href='koduleht.php'">Tagasi projektide nimekirja juurde</button>
                 <table border="1">
                     <tr>
-                        <th>Задача</th>
-                        <th>Исполнитель</th>
-                        <th>Должность</th>
-                        <th>Затраченное время(в часах)</th>
-                        <th>Статус</th>
+                        <th>Ülesanne</th>
+                        <th>Esineja</th>
+                        <th>Positsioon</th>
+                        <th>Kulutatud aeg (tundides)</th>
+                        <th>Staatus</th>
                     </tr>
                     <xsl:for-each select="/projects/project[@id = $project_id]/task">
                         <tr>
@@ -39,9 +41,9 @@
                         </tr>
                     </xsl:for-each>
                 </table>
-                <h1>Подача заявки</h1>
+                <h1>Taotluse esitamine</h1>
                 <!-- Button to open the modal -->
-                <button class="open-modal" onclick="openModal()">Подать заявку(для исполнителей)</button>
+                <button class="open-modal" onclick="openModal()">Kandideerida (esinejatele)</button>
 
                 <!-- Modal -->
                 <div id="myModal" class="modal">
@@ -49,50 +51,49 @@
                         <!-- Form for submitting a request -->
                         <form method="post" action="userleht.php" class="add" onsubmit="return validateForm()">
                             <input type="hidden" name="project_id" value="{$project_id}"/>
-                            <label for="first_name">Имя:</label>
+                            <label for="first_name">Nimi:</label>
                             <input type="text" id="first_name" name="first_name" /><br/>
-                            <label for="last_name">Фамилия:</label>
+                            <label for="last_name">Perenimi:</label>
                             <input type="text" id="last_name" name="last_name" /><br/>
-                            <label for="role">Должность:</label>
+                            <label for="role">Positsioon:</label>
                             <select id="role" name="role">
-                                <option value="Директор">Директор</option>
-                                <option value="Менеджер">Менеджер</option>
-                                <option value="Разработчик">Разработчик</option>
-                                <option value="Дизайнер">Дизайнер</option>
-                                <option value="Тестировщик">Тестировщик</option>
-                                <option value="Системный администратор">Системный администратор</option>
-                                <option value="Маркетолог">Маркетолог</option>
-                                <option value="Аналитик">Аналитик</option>
-                                <option value="Бухгалтер">Бухгалтер</option>
-                                <option value="HR-менеджер">HR-менеджер</option>
+                                <option value="Juht">Juht</option>
+                                <option value="Arendaja">Arendaja</option>
+                                <option value="Disainer">Disainer</option>
+                                <option value="Testija">Testija</option>
+                                <option value="Süsteemiadministraator">Süsteemiadministraator</option>
+                                <option value="Turundaja">Turundaja</option>
+                                <option value="Analüütik">Analüütik</option>
+                                <option value="Raamatupidaja">Raamatupidaja</option>
+                                <option value="Personalijuht">Personalijuht</option>
                             </select><br/>
-                            <label for="profession">Профессия:</label>
+                            <label for="profession">Amet:</label>
                             <select id="profession" name="profession">
-                                <option value="Веб-разработчик">Веб-разработчик</option>
-                                <option value="Программист Java">Программист Java</option>
-                                <option value="Сетевой администратор">Сетевой администратор</option>
-                                <option value="Инженер технической поддержки">Инженер технической поддержки</option>
-                                <option value="Системный архитектор">Системный архитектор</option>
-                                <option value="Инженер по тестированию">Инженер по тестированию</option>
-                                <option value="Frontend-разработчик">Frontend-разработчик</option>
-                                <option value="Продукт-менеджер">Продукт-менеджер</option>
-                                <option value="База данных администратор">База данных администратор</option>
-                                <option value="Специалист по информационной безопасности">Специалист по информационной безопасности</option>
-                                <option value="QA инженер">QA инженер</option>
-                                <option value="Системный администратор Linux">Системный администратор Linux</option>
-                                <option value="Графический дизайнер">Графический дизайнер</option>
-                                <option value="Программист Python">Программист Python</option>
-                                <option value="DevOps инженер">DevOps инженер</option>
-                                <option value="Аналитик данных">Аналитик данных</option>
-                                <option value="IT-консультант">IT-консультант</option>
-                                <option value="Специалист по машинному обучению">Специалист по машинному обучению</option>
-                                <option value="Системный администратор Windows">Системный администратор Windows</option>
-                                <option value="Мобильный разработчик">Мобильный разработчик</option>
+                                <option value="Veebiarendaja">Veebiarendaja</option>
+                                <option value="Java programmeerija">Java programmeerija</option>
+                                <option value="Võrguadministraator">Võrguadministraator</option>
+                                <option value="Tehnilise toe insener">Tehnilise toe insener</option>
+                                <option value="Süsteemiarhitekt">Süsteemiarhitekt</option>
+                                <option value="Testinsener">Testinsener</option>
+                                <option value="Frontend-arendaja">Frontend-arendaja</option>
+                                <option value="Produktijuht">Produktijuht</option>
+                                <option value="Andmebaasiadministraator">Andmebaasiadministraator</option>
+                                <option value="Infoturbe spetsialist">Infoturbe spetsialist</option>
+                                <option value="QA insener">QA insener</option>
+                                <option value="Linuxi süsteemiadministraator">Linuxi süsteemiadministraator</option>
+                                <option value="Graafiline disainer">Graafiline disainer</option>
+                                <option value="Python programmeerija">Python programmeerija</option>
+                                <option value="DevOps insener">DevOps insener</option>
+                                <option value="Andmeanalüütik">Andmeanalüütik</option>
+                                <option value="IT-konsultant">IT-konsultant</option>
+                                <option value="Machine Learning spetsialist">Machine Learning spetsialist</option>
+                                <option value="Windowsi süsteemiadministraator">Windowsi süsteemiadministraator</option>
+                                <option value="Mobiilirakenduste arendaja">Mobiilirakenduste arendaja</option>
                             </select><br/>
-                            <input type="submit" value="Подать заявку"/>
+                            <input type="submit" value="Rakenda"/>
                         </form>
                         <!-- Button to close the modal -->
-                        <button class="close-modal" onclick="closeModal()">Отмена</button>
+                        <button class="close-modal" onclick="closeModal()">Tagasi</button>
                     </div>
                 </div>
             </body>

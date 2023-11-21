@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($tasks->length > 0) {
         $task = $tasks->item(0);
-        $task->getElementsByTagName('status')->item(0)->nodeValue = 'подтверждена';
+        $task->getElementsByTagName('status')->item(0)->nodeValue = 'kinnitatud';
         $task->getElementsByTagName('entry_time')->item(0)->nodeValue = $hours;
     }
 

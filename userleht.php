@@ -1,3 +1,4 @@
+<?php if(isset($_GET['code'])){die(highlight_file(__FILE__,1));} ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']) && isset($_POST['password'])) {
     $login = $_POST['login'];
@@ -12,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']) && isset($_P
         echo 'Error, invalid login or password';
     }
     // Добавьте здесь обработку неправильных данных, если необходимо
-} else if (isset($_GET['project_id'])) {
+}
+if (isset($_GET['project_id'])) {
     $project_id = $_GET['project_id'];
 
     // Загрузка XML-файла
@@ -40,11 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']) && isset($_P
         echo $proc->transformToXML($xml);
     } else {
         // Если проект не найден, вы можете вывести сообщение об ошибке
-        echo "Проект не найден.";
+        echo "Projekti ei leitud.";
     }
-} else {
-    // Если параметр project_id не был передан, вы можете вывести сообщение о выборе проекта
-    echo "Выберите проект из списка.";
 }
 
 
@@ -83,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['first_name'])) {
         $newTask->appendChild($xml->createElement("report_id", $reportId));
         $newTask->appendChild($newUser);
         $newTask->appendChild($xml->createElement("entry_time", " "));
-        $newTask->appendChild($xml->createElement("status", "ожидает подтверждения"));
+        $newTask->appendChild($xml->createElement("status", "ootab kinnitust"));
 
         // Добавление новой задачи в проект (используя переданный project_id)
         $xpath = new DOMXPath($xml);
@@ -97,10 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['first_name'])) {
             $xml->save('data.xml');
             header("Location: userleht.php?project_id=$project_id");
         } else {
-            echo "Проект не найден.";
+            echo "Projekti ei leitud.";
         }
     } else {
-        echo "Выберите проект из списка.";
+        echo "Valige projekt nimekirjast.";
     }
 }
 ?>
